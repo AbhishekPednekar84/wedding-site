@@ -1,0 +1,134 @@
+/* ########### THE HEADER SECTION ########### */
+
+#header {
+    padding: 45px;
+    text-align: center;
+}
+
+/* Navbar */
+
+.navbar {
+    padding-bottom: 2rem;
+}
+
+nav .navbar-brand {
+    color: #65c6c4 !important;
+    font-family: 'Tangerine', serif;
+    font-weight: normal;
+}
+
+nav .navbar-nav li a {
+    color: #d9d872 !important;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 20px;
+}
+
+nav .navbar-toggler {
+    background-color: #caf2d7;
+}
+
+
+.header-image {
+    height: 90%;
+    width: 55%;
+    padding-top: 15px;
+    transform: rotate(5deg);
+}
+
+.welcome-message {
+    margin: 0 auto 0 auto;
+    font-family: 'Tangerine', serif;
+    font-size: 70px;
+    font-weight: bold;
+    padding-left: 60px;
+    color: #caf2d7;
+}
+
+/* ########### THE INVITE SECTION ########### */
+
+#invite {
+    padding: 45px;
+    font-family: 'Ubuntu';
+    font-size: large;
+}
+
+.card-wedding {
+    padding: 1% 10%;
+}
+
+.card-reception, .card-testimonial {
+    padding: 1% 10%;
+}
+
+.invite-message {
+
+    font-family: 'Tangerine', serif;
+    font-size: 70px;
+    color: #113f67;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 100px;
+    font-weight: bold;
+}
+
+/* ########### THE PRE-WEDDING SECTION ########### */
+
+#pre-wedding {
+    padding: 75px;
+}
+
+
+.pw-image {
+    margin: 0 auto 0 auto;
+}
+
+/* ########### THE TESTIMONIAL SECTION ########### */
+
+#testimonials {
+    padding: 45px;
+}
+
+.testimonial-message {
+    font-family: 'Tangerine', serif;
+    font-size: 70px;
+    font-weight: bold;
+    color: #20716a;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 100px;
+}
+
+.testimonial-message2 {
+    margin: 0 auto 0 auto;
+    font-family: 'Tangerine', serif;
+    font-size: 70px;
+    font-weight: bold;
+    color: #5c4d4d;
+    padding: 25px;
+}
+
+
+/* ########### THE TESTIMONIAL PAGE ########### */
+
+.testimonial-name {
+    /*font-family: 'Satisfy', cursive; */
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #aaa;
+    font-size: 38px;
+    font-weight: bold;
+    color: #5c4d4d;
+}
+
+.testimonial-card-message {
+    font-family: 'Satisfy', cursive;
+    font-size: 25px;
+    color: #5c4d4d;
+}
+
+/* ########### THE FOOTER PAGE ########### */
+#footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #20716a;
+    color: #fff;
+}

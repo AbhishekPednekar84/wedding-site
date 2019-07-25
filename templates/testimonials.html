@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    {{ super() }}
+    <!-- The testimonials page requires a different background -->
+    <style>
+        body {
+            background: url('static/images/testimonial-background.jpg')
+        }
+
+        nav .navbar-nav li a {
+            color: #5c4d4d !important;
+            font-family: 'Hammersmith One', sans-serif;
+            font-size: 20px;
+}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light">
+         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('wedding_page') }}">Back</a>
+            </li>
+         </ul>
+    </nav>
+
+    <h3 class="testimonial-message2">Testimonials...</h3>
+    <div class="row">
+        <div class="card-testimonial col-lg-6">
+
+            {% for testimonial in testimonials %}
+                {% if testimonial.id % 2 != 0 %}
+                <div class="card border-dark">
+                    <div class="card-header">
+                        <h2 class="testimonial-name">{{ testimonial.name }}</h2>
+                        <p class="testimonial-card-message">{{ testimonial.message }}</p>
+                    </div>
+                </div>
+                <br><br>
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <div class="card-testimonial col-lg-6">
+
+            {% for testimonial in testimonials %}
+                {% if testimonial.id % 2 == 0 %}
+                <div class="card card border-dark">
+                    <div class="card-header">
+                        <h2 class="testimonial-name">{{ testimonial.name }}</h2>
+                        <p class="testimonial-card-message">{{ testimonial.message }}</p>
+                    </div>
+                </div>
+                <br><br>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <!-- Header section -->
+    <section id="header" style="background: url('static/images/header-bg.jpg')">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+
+                <!-- Hamburger menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbartoggler">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#invite">Invitation</a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="header nav-link" href="#pre-wedding">Photos</a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Wishes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('display_testimonials') }}">Testimonials</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Header section details -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="welcome-message">Welcome to our wedding page!</h3>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="header-image" src = "{{ url_for('static', filename='images/header-image.jpg') }}">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Invite Section -->
+    <section id="invite" style="background: url('static/images/invite-bg.jpg'); background-repeat: no-repeat;
+  background-size: 1600px 800px;">
+        <div class="container-fluid">
+            <h3 class="invite-message">We hope to see you there...</h3>
+            <div class="row">
+                <div class="card-wedding col-lg-6">
+                    <div class="card border-success text-white" style="background: linear-gradient(to bottom, #2C3E50 0%, #4CA1AF 100%);">
+                        <div class="card-header">
+                            <h3>Wedding</h3>
+                            <p><b>Date</b>: 13th July 2019</p>
+                            <p><b>Time</b>: 11 AM - 11:50 AM</p>
+                            <p><b>Venue</b>: T.D.M Hall, Ernakulam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-reception col-lg-6">
+                    <div class="card border-success text-white" style="background: linear-gradient(to bottom, #2C3E50 0%, #4CA1AF 100%);">
+                        <div class="card-header">
+                            <h3>Reception</h3>
+                            <p><b>Date</b>: 14th July 2019</p>
+                            <p><b>Time</b>: 4 PM - 7 PM</p>
+                            <p><b>Venue</b>: Mattammel Auditorium, Perumbavoor</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Wedding section -->
+    <section id="pre-wedding" style="background: url('static/images/pw-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 1800px 1500px;">
+
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Carousel -->
+                <div id="carouselnavigators" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="{{ url_for('static', filename='images/pre-wedding/pw-6.jpg') }}" class="d-block w-100">
+                        </div>
+                        {% for pw_image in pw_images %}
+                            {% if pw_image != 'pw-6.jpg' %}
+                                <div class="carousel-item">
+                                  <img src="{{ url_for('static', filename='images/pre-wedding/' + pw_image) }}" class="d-block w-100">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+                      <a class="carousel-control-prev" href="#carouselnavigators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselnavigators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                </div>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="testimonials" style="background: url('static/images/post-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 1600px 600px;">
+
+        <h3 class="testimonial-message">Wish the happy couple</h3>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.name(class="form-control form-control-lg", placeholder="Your Name") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message(class="form-control form-control-lg", placeholder="Your Message (1000 chars)") }}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-dark") }}
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <p>
+            Get in touch - <a href="https://github.com/AbhishekPednekar84"><i style="color:#fff" class="fab fa-github"></i></a>&nbsp;
+                <a href="mailto:abhi_ap@hotmail.com"><i style="color:#fff" class="fas fa-envelope"></i></a>
+        </p>
+
+        <p>
+            Made with <i style="color:red" class="fas fa-heart"></i> in Bangalore, India
+        </p>
+
+
+    </section>
+{% endblock %}
+
